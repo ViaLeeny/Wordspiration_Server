@@ -1,6 +1,5 @@
 class PlayersController < ApplicationController
 
-
     def index 
         player = Player.all 
         render json: player, include: [:games, :words]
