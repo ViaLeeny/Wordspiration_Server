@@ -12,4 +12,4 @@ Game.destroy_all
 
 player = Player.create([{name: "Ayleen"}])
 word = Word.create([{text: "test"}])
-game = Game.create([{player_id: 1, word_id: 1}])
+game = Game.create([{player_id: 1, word_id: 1, score: 0}])
