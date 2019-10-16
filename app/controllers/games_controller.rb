@@ -11,11 +11,19 @@ class GamesController < ApplicationController
             render json: game, include: [:player, :word]
         else 
             render json: {error: "Game not found"}
+         end 
     end 
 
     def create 
-        player = Player.find_or_create_by(name: params: [:name])
-        word = Word.find_or_create_by(text: params: [:text])
-        game = Game.create(player: player.id, word: word.id)
+        player = Player.find_or_create_by(name: params[:playerName])
+        theWord = Word.find_or_create_by(text: params[:word])
+        game = Game.new(player_id: player.id, word_id: theWord.id)
+
+        if game.valid? 
+            game.save 
+            render json: game, include: [:player, :word]
+        else
+            render json: {error: "Game invalid."}
+        end 
     end 
 end
