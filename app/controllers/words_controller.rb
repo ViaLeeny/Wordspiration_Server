@@ -1,7 +1,7 @@
 class WordsController < ApplicationController
 
 def index 
-    word = Word.all 
+    word = Word.all.sample
     render json: word, include: [:games]
 end 
 

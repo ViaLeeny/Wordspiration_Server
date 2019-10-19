@@ -1,24 +1,23 @@
+require 'pry'
+require 'rest-client'
+require 'json'
+
+
 class Word < ApplicationRecord
     has_many :games
     has_many :players, through: :games
     
 
-# require 'pry'
-# require 'rest-client'
-# require 'json'
+# RAN THIS CODE ONCE - PURPOSE: TO GET RESPONSE STRING, SPLIT LINE 
+# AND CREATE EACH WORD IN MY DATABASE
+    # def self.all_words 
+    #     resp = RestClient.get("http://app.linkedin-reach.io/words", headers={})
+    #     words_array= resp.body.split("\n")
 
 
-#     # def self.all_words
-#     sleep(2)   
-#     resp = RestClient.get("http://app.linkedin-reach.io/words")
-#     word_search_result = JSON.parse(resp)
-#     #     words_array= word_search_result.split("\n")
-
-#     # end 
-#     # binding.pry
-
-#     # def self.separate_words(all_words)
-#     #     all_words.split("\n")
-#     # end 
+    #     # .EACH OVER THEM AND .CREATE THEM
+    #     words_array.each{ | word | Word.create({'text': word})}
+        
+    # end 
 
 end
