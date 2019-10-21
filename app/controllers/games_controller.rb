@@ -40,6 +40,6 @@ class GamesController < ApplicationController
         # else 
         #     render json: { error: "Game doesn't exist" }
         # end 
-        binding.pry
+        # binding.pry
     end 
 end

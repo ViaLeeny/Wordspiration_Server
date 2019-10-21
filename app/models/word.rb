@@ -20,4 +20,8 @@ class Word < ApplicationRecord
         
     end 
 
+    def getDefinition
+
+    end 
+
 end
